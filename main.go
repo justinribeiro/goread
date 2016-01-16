@@ -25,10 +25,10 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/MiniProfiler/go/miniprofiler"
-	mpg "github.com/MiniProfiler/go/miniprofiler_gae"
-	"github.com/gorilla/mux"
-	"github.com/mjibson/goon"
+	"github.com/mjibson/goread/_third_party/github.com/MiniProfiler/go/miniprofiler"
+	mpg "github.com/mjibson/goread/_third_party/github.com/MiniProfiler/go/miniprofiler_gae"
+	"github.com/mjibson/goread/_third_party/github.com/gorilla/mux"
+	"github.com/mjibson/goread/_third_party/github.com/mjibson/goon"
 
 	"appengine"
 	"appengine/datastore"
@@ -76,6 +76,7 @@ func RegisterHandlers(r *mux.Router) {
 	router.Handle("/user/get-contents", mpg.NewHandler(GetContents)).Name("get-contents")
 	router.Handle("/user/get-feed", mpg.NewHandler(GetFeed)).Name("get-feed")
 	router.Handle("/user/get-stars", mpg.NewHandler(GetStars)).Name("get-stars")
+	router.Handle("/user/import/get-url", mpg.NewHandler(UploadUrl)).Name("upload-url")
 	router.Handle("/user/import/opml", mpg.NewHandler(ImportOpml)).Name("import-opml")
 	router.Handle("/user/list-feeds", mpg.NewHandler(ListFeeds)).Name("list-feeds")
 	router.Handle("/user/mark-read", mpg.NewHandler(MarkRead)).Name("mark-read")
