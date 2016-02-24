@@ -239,7 +239,7 @@ goReadAppModule.controller('GoreadCtrl', function($scope, $http, $timeout, $wind
 		}
 		var setCurrent = !opts.noOpen && !middleClick;
 		var jumpStory = setCurrent && $scope.currentStory != i && !opts.noScroll;
-		var collapse = opts.collapse; // undefined is falsy, so no collapse
+		var collapse = 'toggle'; // undefined is falsy, so no collapse
 		if ($scope.opts.expanded) {
 			$scope.storyCollapse = false;
 		} else if (collapse === 'toggle') {
